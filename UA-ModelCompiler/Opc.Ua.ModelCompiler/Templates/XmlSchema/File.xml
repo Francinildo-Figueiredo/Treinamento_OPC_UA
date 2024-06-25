@@ -1,0 +1,21 @@
+<!--***START***-->
+<xs:schema
+  xmlns:s0="ListOfNamespaces"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:ua="http://opcfoundation.org/UA/2008/02/Types.xsd"
+  xmlns:tns="_Namespace_"
+  targetNamespace="_Namespace_"
+  elementFormDefault="qualified"
+>
+  <xs:annotation>
+    <xs:appinfo>
+      <tns:Model />
+    </xs:appinfo>
+  </xs:annotation>
+  
+  <!-- Imports -->
+  <!-- BuiltInTypes -->
+  <!-- ListOfTypes -->
+
+</xs:schema>
+<!--***END***-->
