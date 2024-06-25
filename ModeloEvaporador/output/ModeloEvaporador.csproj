@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <AssemblyName>UFCG.ModeloEvaporador</AssemblyName>
+    <RootNamespace>UFCG.ModeloEvaporador</RootNamespace>
+    <Copyright>Copyright (c) Unified Automation GmbH 2011-2024</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="modeloevaporador.xml" />
+  </ItemGroup>
+  
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
+    <PackageReference Include="UnifiedAutomation.UaBase" Version="" />
+    <PackageReference Include="UnifiedAutomation.UaBase.BouncyCastle" Version="" />
+    <PackageReference Include="UnifiedAutomation.UaServer" Version="" />
+  </ItemGroup>
+</Project>
