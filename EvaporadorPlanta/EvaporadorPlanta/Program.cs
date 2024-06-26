@@ -41,7 +41,7 @@ namespace EvaporadorPlanta
                 }
 
                 // load the application configuration.
-                application.LoadApplicationConfiguration("C:/Users/franc/Documents/Treinamento_OPCUA_Ferramentas/EvaporadorPlanta/EvaporadorPlanta/Models/EvaporadorPlanta.Config.xml", false).Wait();
+                application.LoadApplicationConfiguration("C:/Users/Francinildo Barbosa/OneDrive/Documentos/Treinamento_OPC_UA/EvaporadorPlanta/EvaporadorPlanta/Models/EvaporadorPlanta.Config.xml", false).Wait();
 
                 // check the application certificate.
                 application.CheckApplicationInstanceCertificate(false, 0).Wait();

@@ -63,8 +63,6 @@ namespace AppEvaporadorCliente
 
             try
             {
-                //await application.LoadApplicationConfiguration(false);
-                //await application.CheckApplicationInstanceCertificate(false, 0);
 
                 var endpointDescription = CoreClientUtils.SelectEndpoint(serverUrl, false);
                 var endpointConfiguration = EndpointConfiguration.Create(application.ApplicationConfiguration);
@@ -80,7 +78,8 @@ namespace AppEvaporadorCliente
 
                 labelStatus.Text = "Status: Conectado";
                 labelStatus.BackColor = Color.LightGreen;
-                ReadNodeValue();
+                readTimer.Start();
+                //ReadNodeValue();
             }
             catch (Exception ex)
             {
@@ -89,15 +88,21 @@ namespace AppEvaporadorCliente
             }
         }
 
+        private void readTimer_Tick(object sender, EventArgs e)
+        {
+            ReadNodeValue();
+        }
+
         private void ReadNodeValue()
         {
 
+            // Cada um dos cinco try seguintes realiza a leitura da variável de saída do LT-001
             try
             {
                 var nodeId = new NodeId("ns=2;i=294");
                 var dataValue = session.ReadValue(nodeId);
                 textBox4.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
-                labelStatus2.Text = $"Status: Sucesso!";
+                labelStatus2.Text = $"Status: Leitura Realizada";
                 labelStatus2.BackColor = Color.LightGreen;
             }
             catch (Exception ex)
@@ -108,10 +113,82 @@ namespace AppEvaporadorCliente
 
             try
             {
-                var nodeId = new NodeId("ns=2;i=303");
+                var nodeId = new NodeId("ns=2;i=294");
+                var dataValue = session.ReadValue(nodeId);
+                textBox6.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
+                label7.Text = $"Status: Leitura Realizada";
+                label7.BackColor = Color.LightGreen;
+            }
+            catch (Exception ex)
+            {
+                label7.Text = $"Status: Falha na leitura ({ex.Message})";
+                label7.BackColor = Color.Red;
+            }
+
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=294");
+                var dataValue = session.ReadValue(nodeId);
+                textBox8.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
+                label11.Text = $"Status: Leitura Realizada";
+                label11.BackColor = Color.LightGreen;
+            }
+            catch (Exception ex)
+            {
+                label11.Text = $"Status: Falha na leitura ({ex.Message})";
+                label11.BackColor = Color.Red;
+            }
+
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=294");
+                var dataValue = session.ReadValue(nodeId);
+                textBox10.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
+                label15.Text = $"Status: Leitura Realizada";
+                label15.BackColor = Color.LightGreen;
+            }
+            catch (Exception ex)
+            {
+                label15.Text = $"Status: Falha na leitura ({ex.Message})";
+                label15.BackColor = Color.Red;
+            }
+
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=294");
+                var dataValue = session.ReadValue(nodeId);
+                textBox12.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
+                label19.Text = $"Status: Leitura Realizada";
+                label19.BackColor = Color.LightGreen;
+            }
+            catch (Exception ex)
+            {
+                label19.Text = $"Status: Falha na leitura ({ex.Message})";
+                label19.BackColor = Color.Red;
+            }
+            
+            // Leitura da variável de saída TT-001 
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=264"); // TT-001
+                var dataValue = session.ReadValue(nodeId);
+                textBox14.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
+                label23.Text = $"Status: Leitura Realizada";
+                label23.BackColor = Color.LightGreen;
+            }
+            catch (Exception ex)
+            {
+                label23.Text = $"Status: Falha na leitura ({ex.Message})";
+                label23.BackColor = Color.Red;
+            }
+
+            // Apartir daqui são realizadas as leituras das variáveis de entrada
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=303"); // SC-001
                 var dataValue = session.ReadValue(nodeId);
                 textBox3.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
-                labelStatus25.Text = $"Status: Sucesso!";
+                labelStatus25.Text = $"Status: Leitura Realizada";
                 labelStatus25.BackColor = Color.LightGreen;
             }
             catch (Exception ex)
@@ -119,22 +196,238 @@ namespace AppEvaporadorCliente
                 labelStatus25.Text = $"Status: Falha na leitura ({ex.Message})";
                 labelStatus25.BackColor = Color.Red;
             }
+
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=346"); // SC-002
+                var dataValue = session.ReadValue(nodeId);
+                textBox5.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
+                label5.Text = $"Status: Leitura Realizada";
+                label5.BackColor = Color.LightGreen;
+            }
+            catch (Exception ex)
+            {
+                label5.Text = $"Status: Falha na leitura ({ex.Message})";
+                label5.BackColor = Color.Red;
+            }
+
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=311"); // SC-003
+                var dataValue = session.ReadValue(nodeId);
+                textBox7.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
+                label9.Text = $"Status: Leitura Realizada";
+                label9.BackColor = Color.LightGreen;
+            }
+            catch (Exception ex)
+            {
+                label9.Text = $"Status: Falha na leitura ({ex.Message})";
+                label9.BackColor = Color.Red;
+            }
+
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=333"); // FV-001
+                var dataValue = session.ReadValue(nodeId);
+                textBox9.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
+                label13.Text = $"Status: Leitura Realizada";
+                label13.BackColor = Color.LightGreen;
+            }
+            catch (Exception ex)
+            {
+                label13.Text = $"Status: Falha na leitura ({ex.Message})";
+                label13.BackColor = Color.Red;
+            }
+
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=319"); // FV-002
+                var dataValue = session.ReadValue(nodeId);
+                textBox11.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
+                label17.Text = $"Status: Leitura Realizada";
+                label17.BackColor = Color.LightGreen;
+            }
+            catch (Exception ex)
+            {
+                label17.Text = $"Status: Falha na leitura ({ex.Message})";
+                label17.BackColor = Color.Red;
+            }
+
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=272"); // TV-001
+                var dataValue = session.ReadValue(nodeId);
+                textBox13.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
+                label21.Text = $"Status: Leitura Realizada";
+                label21.BackColor = Color.LightGreen;
+            }
+            catch (Exception ex)
+            {
+                label21.Text = $"Status: Falha na leitura ({ex.Message})";
+                label21.BackColor = Color.Red;
+            }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=303"); // SC-001
+                var value = double.Parse(textBox3.Text);
+                var dataValue = new DataValue(new Variant(value));
+                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
 
+                if (StatusCode.IsGood(results[0]))
+                {
+                    labelStatus25.Text = "Status: Escrita realizada";
+                    labelStatus25.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    labelStatus25.Text = $"Status: Falha na escrita ({results[0]})";
+                    labelStatus25.BackColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
+            {
+                labelStatus25.Text = $"Status: Falha na escrita ({ex.Message})";
+                labelStatus25.BackColor = Color.Red;
+            }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=346"); // SC-002
+                var value = double.Parse(textBox5.Text);
+                var dataValue = new DataValue(new Variant(value));
+                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
 
+                if (StatusCode.IsGood(results[0]))
+                {
+                    label5.Text = "Status: Escrita realizada";
+                    label5.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    label5.Text = $"Status: Falha na escrita ({results[0]})";
+                    label5.BackColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
+            {
+                label5.Text = $"Status: Falha na escrita ({ex.Message})";
+                label5.BackColor = Color.Red;
+            }
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=311"); // SC-003
+                var value = double.Parse(textBox7.Text);
+                var dataValue = new DataValue(new Variant(value));
+                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
 
+                if (StatusCode.IsGood(results[0]))
+                {
+                    label9.Text = "Status: Escrita realizada";
+                    label9.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    label9.Text = $"Status: Falha na escrita ({results[0]})";
+                    label9.BackColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
+            {
+                label9.Text = $"Status: Falha na escrita ({ex.Message})";
+                label9.BackColor = Color.Red;
+            }
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=333"); // FV-001
+                var value = double.Parse(textBox9.Text);
+                var dataValue = new DataValue(new Variant(value));
+                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
+
+                if (StatusCode.IsGood(results[0]))
+                {
+                    label13.Text = "Status: Escrita realizada";
+                    label13.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    label13.Text = $"Status: Falha na escrita ({results[0]})";
+                    label13.BackColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
+            {
+                label13.Text = $"Status: Falha na escrita ({ex.Message})";
+                label13.BackColor = Color.Red;
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=319"); // FV-002
+                var value = double.Parse(textBox11.Text);
+                var dataValue = new DataValue(new Variant(value));
+                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
+
+                if (StatusCode.IsGood(results[0]))
+                {
+                    label17.Text = "Status: Escrita realizada";
+                    label17.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    label17.Text = $"Status: Falha na escrita ({results[0]})";
+                    label17.BackColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
+            {
+                label17.Text = $"Status: Falha na escrita ({ex.Message})";
+                label17.BackColor = Color.Red;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var nodeId = new NodeId("ns=2;i=272"); // TV-001
+                var value = double.Parse(textBox13.Text);
+                var dataValue = new DataValue(new Variant(value));
+                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
+
+                if (StatusCode.IsGood(results[0]))
+                {
+                    label21.Text = "Status: Escrita realizada";
+                    label21.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    label21.Text = $"Status: Falha na escrita ({results[0]})";
+                    label21.BackColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
+            {
+                label21.Text = $"Status: Falha na escrita ({ex.Message})";
+                label21.BackColor = Color.Red;
+            }
+        }
     }
 }
