@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{233630e2-bb7f-4786-9afd-a03876ae003e}") = "ModeloEvaporador", "ModeloEvaporador.csproj", "{a95b5cd6-f683-49f9-93c4-9aeddbfcc3d0}"
+Project("{65194f94-6b98-41de-80d6-286dd4e9a1f7}") = "ModeloEvaporador", "ModeloEvaporador.csproj", "{9274f770-af16-46d2-b911-d05d01d2b013}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,15 +10,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{a95b5cd6-f683-49f9-93c4-9aeddbfcc3d0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{a95b5cd6-f683-49f9-93c4-9aeddbfcc3d0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{a95b5cd6-f683-49f9-93c4-9aeddbfcc3d0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{a95b5cd6-f683-49f9-93c4-9aeddbfcc3d0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9274f770-af16-46d2-b911-d05d01d2b013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9274f770-af16-46d2-b911-d05d01d2b013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9274f770-af16-46d2-b911-d05d01d2b013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9274f770-af16-46d2-b911-d05d01d2b013}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4b5f43c2-c49b-4040-a3f7-e6dd3889c748}
+		SolutionGuid = {c313d50f-1a51-4e1a-ac70-27a0f1ae52b9}
 	EndGlobalSection
 EndGlobal

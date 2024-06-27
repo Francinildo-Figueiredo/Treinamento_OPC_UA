@@ -38,45 +38,41 @@
 **
 ******************************************************************************/
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnifiedAutomation.UaBase;
-using UnifiedAutomation.UaServer;
 
-namespace UFCG.ModeloEvaporador
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            try
-            {
-                // There is no license file configured in UaModeler.
-                // After you have added a license file to the project you can add the license with the following
-                // line of code.
-                // ApplicationLicenseManager.AddProcessLicenses(System.Reflection.Assembly.GetExecutingAssembly(), "License.lic");
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
-                // Start the server.
-                ServerManager server = new TestServerManager();
-                ApplicationInstance.Default.AutoCreateCertificate = true;
-                ApplicationInstance.Default.Start(server, null, server);
-                Console.WriteLine("Endpoint URL: opc.tcp://localhost:48030");
-                // Block until the server exits.
-                Console.WriteLine("Press <enter> to exit the program.");
-                Console.ReadLine();
-                // Stop the server.
-                server.Stop();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("ERROR: {0}", e.Message);
-                Console.WriteLine("Press <enter> to exit the program.");
-                Console.ReadLine();
-            }
-        }
+// General Information about an assembly is controlled through the following
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("UFCG.ModeloEvaporador")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("UFCG")]
+[assembly: AssemblyProduct("ModeloEvaporador")]
+[assembly: AssemblyCopyright("Copyright (c) Unified Automation GmbH 2011-2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
 
-    }
-}
+// Setting ComVisible to false makes the types in this assembly not visible
+// to COM components.  If you need to access a type in this assembly from
+// COM, set the ComVisible attribute to true on that type.
+[assembly: ComVisible(false)]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("9274f770-af16-46d2-b911-d05d01d2b013")]
+
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Build and Revision Numbers
+// by using the '*' as shown below:
+// [assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
 

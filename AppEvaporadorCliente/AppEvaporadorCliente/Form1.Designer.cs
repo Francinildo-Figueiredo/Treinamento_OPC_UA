@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.textBoxEndpoint = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BotaoConectar = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.labelStatus25 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -80,8 +82,9 @@
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.readTimer = new System.Windows.Forms.Timer(this.components);
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.readPVTimer = new System.Windows.Forms.Timer(this.components);
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.readMVTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -92,7 +95,7 @@
             // 
             // textBoxEndpoint
             // 
-            this.textBoxEndpoint.Location = new System.Drawing.Point(81, 26);
+            this.textBoxEndpoint.Location = new System.Drawing.Point(86, 55);
             this.textBoxEndpoint.Name = "textBoxEndpoint";
             this.textBoxEndpoint.Size = new System.Drawing.Size(491, 20);
             this.textBoxEndpoint.TabIndex = 0;
@@ -100,7 +103,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 27);
+            this.label1.Location = new System.Drawing.Point(20, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 18);
             this.label1.TabIndex = 1;
@@ -108,7 +111,7 @@
             // 
             // BotaoConectar
             // 
-            this.BotaoConectar.Location = new System.Drawing.Point(578, 26);
+            this.BotaoConectar.Location = new System.Drawing.Point(583, 55);
             this.BotaoConectar.Name = "BotaoConectar";
             this.BotaoConectar.Size = new System.Drawing.Size(74, 21);
             this.BotaoConectar.TabIndex = 2;
@@ -145,7 +148,7 @@
             // labelStatus
             // 
             this.labelStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatus.Location = new System.Drawing.Point(658, 28);
+            this.labelStatus.Location = new System.Drawing.Point(663, 57);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(314, 17);
             this.labelStatus.TabIndex = 33;
@@ -174,7 +177,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.labelStatus2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(18, 65);
+            this.groupBox1.Location = new System.Drawing.Point(18, 134);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(960, 61);
             this.groupBox1.TabIndex = 42;
@@ -191,6 +194,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(84, 23);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(60, 20);
+            this.textBox3.TabIndex = 4;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button2);
@@ -201,7 +212,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(18, 132);
+            this.groupBox2.Location = new System.Drawing.Point(18, 201);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(960, 59);
             this.groupBox2.TabIndex = 43;
@@ -276,7 +287,7 @@
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(18, 197);
+            this.groupBox3.Location = new System.Drawing.Point(18, 266);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(960, 59);
             this.groupBox3.TabIndex = 43;
@@ -351,7 +362,7 @@
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(18, 262);
+            this.groupBox4.Location = new System.Drawing.Point(18, 331);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(960, 59);
             this.groupBox4.TabIndex = 43;
@@ -426,7 +437,7 @@
             this.groupBox5.Controls.Add(this.label18);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(18, 327);
+            this.groupBox5.Location = new System.Drawing.Point(18, 396);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(960, 63);
             this.groupBox5.TabIndex = 44;
@@ -501,7 +512,7 @@
             this.groupBox6.Controls.Add(this.label22);
             this.groupBox6.Controls.Add(this.label23);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(18, 396);
+            this.groupBox6.Location = new System.Drawing.Point(18, 465);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(960, 61);
             this.groupBox6.TabIndex = 45;
@@ -566,22 +577,32 @@
             this.label23.Size = new System.Drawing.Size(314, 17);
             this.label23.TabIndex = 34;
             // 
-            // readTimer
+            // readPVTimer
             // 
-            this.readTimer.Interval = 1000;
-            this.readTimer.Tick += new System.EventHandler(this.readTimer_Tick);
+            this.readPVTimer.Interval = 1000;
+            this.readPVTimer.Tick += new System.EventHandler(this.readPVTimer_Tick);
             // 
-            // textBox3
+            // checkBox1
             // 
-            this.textBox3.Location = new System.Drawing.Point(84, 23);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(60, 20);
-            this.textBox3.TabIndex = 4;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(102, 109);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(159, 19);
+            this.checkBox1.TabIndex = 46;
+            this.checkBox1.Text = "Habilitar leitura das MVs";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckStateChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // readMVTimer
+            // 
+            this.readMVTimer.Interval = 1000;
+            this.readMVTimer.Tick += new System.EventHandler(this.readMVTimer_Tick);
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(990, 469);
+            this.ClientSize = new System.Drawing.Size(990, 542);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -592,6 +613,7 @@
             this.Controls.Add(this.BotaoConectar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxEndpoint);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Cliente Evaporador";
             this.groupBox1.ResumeLayout(false);
@@ -667,8 +689,10 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Timer readTimer;
+        private System.Windows.Forms.Timer readPVTimer;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Timer readMVTimer;
     }
 }
 

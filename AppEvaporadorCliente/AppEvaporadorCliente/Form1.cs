@@ -78,7 +78,7 @@ namespace AppEvaporadorCliente
 
                 labelStatus.Text = "Status: Conectado";
                 labelStatus.BackColor = Color.LightGreen;
-                readTimer.Start();
+                readPVTimer.Start();
                 //ReadNodeValue();
             }
             catch (Exception ex)
@@ -88,18 +88,35 @@ namespace AppEvaporadorCliente
             }
         }
 
-        private void readTimer_Tick(object sender, EventArgs e)
+        private void readPVTimer_Tick(object sender, EventArgs e)
         {
-            ReadNodeValue();
+            ReadPVNodeValue();
+        }
+        private void readMVTimer_Tick(object sender, EventArgs e)
+        {
+            ReadMVNodeValue();
         }
 
-        private void ReadNodeValue()
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.CheckState == CheckState.Checked)
+            {  
+                readMVTimer.Start();
+            }
+            else
+            {
+                readMVTimer.Stop();
+            }
+            
+        }
+
+        private void ReadPVNodeValue()
         {
 
             // Cada um dos cinco try seguintes realiza a leitura da variável de saída do LT-001
             try
             {
-                var nodeId = new NodeId("ns=2;i=294");
+                var nodeId = new NodeId("ns=2;i=292");
                 var dataValue = session.ReadValue(nodeId);
                 textBox4.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
                 labelStatus2.Text = $"Status: Leitura Realizada";
@@ -113,7 +130,7 @@ namespace AppEvaporadorCliente
 
             try
             {
-                var nodeId = new NodeId("ns=2;i=294");
+                var nodeId = new NodeId("ns=2;i=292");
                 var dataValue = session.ReadValue(nodeId);
                 textBox6.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
                 label7.Text = $"Status: Leitura Realizada";
@@ -127,7 +144,7 @@ namespace AppEvaporadorCliente
 
             try
             {
-                var nodeId = new NodeId("ns=2;i=294");
+                var nodeId = new NodeId("ns=2;i=292");
                 var dataValue = session.ReadValue(nodeId);
                 textBox8.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
                 label11.Text = $"Status: Leitura Realizada";
@@ -141,7 +158,7 @@ namespace AppEvaporadorCliente
 
             try
             {
-                var nodeId = new NodeId("ns=2;i=294");
+                var nodeId = new NodeId("ns=2;i=292");
                 var dataValue = session.ReadValue(nodeId);
                 textBox10.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
                 label15.Text = $"Status: Leitura Realizada";
@@ -155,7 +172,7 @@ namespace AppEvaporadorCliente
 
             try
             {
-                var nodeId = new NodeId("ns=2;i=294");
+                var nodeId = new NodeId("ns=2;i=292");
                 var dataValue = session.ReadValue(nodeId);
                 textBox12.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
                 label19.Text = $"Status: Leitura Realizada";
@@ -170,7 +187,7 @@ namespace AppEvaporadorCliente
             // Leitura da variável de saída TT-001 
             try
             {
-                var nodeId = new NodeId("ns=2;i=264"); // TT-001
+                var nodeId = new NodeId("ns=2;i=262"); // TT-001
                 var dataValue = session.ReadValue(nodeId);
                 textBox14.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
                 label23.Text = $"Status: Leitura Realizada";
@@ -181,11 +198,14 @@ namespace AppEvaporadorCliente
                 label23.Text = $"Status: Falha na leitura ({ex.Message})";
                 label23.BackColor = Color.Red;
             }
+        }
 
-            // Apartir daqui são realizadas as leituras das variáveis de entrada
+        private void ReadMVNodeValue()
+        {
+            // Aqui são realizadas as leituras das variáveis de entrada
             try
             {
-                var nodeId = new NodeId("ns=2;i=303"); // SC-001
+                var nodeId = new NodeId("ns=2;i=301"); // SC-001
                 var dataValue = session.ReadValue(nodeId);
                 textBox3.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
                 labelStatus25.Text = $"Status: Leitura Realizada";
@@ -199,7 +219,7 @@ namespace AppEvaporadorCliente
 
             try
             {
-                var nodeId = new NodeId("ns=2;i=346"); // SC-002
+                var nodeId = new NodeId("ns=2;i=344"); // SC-002
                 var dataValue = session.ReadValue(nodeId);
                 textBox5.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
                 label5.Text = $"Status: Leitura Realizada";
@@ -213,7 +233,7 @@ namespace AppEvaporadorCliente
 
             try
             {
-                var nodeId = new NodeId("ns=2;i=311"); // SC-003
+                var nodeId = new NodeId("ns=2;i=309"); // SC-003
                 var dataValue = session.ReadValue(nodeId);
                 textBox7.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
                 label9.Text = $"Status: Leitura Realizada";
@@ -227,7 +247,7 @@ namespace AppEvaporadorCliente
 
             try
             {
-                var nodeId = new NodeId("ns=2;i=333"); // FV-001
+                var nodeId = new NodeId("ns=2;i=331"); // FV-001
                 var dataValue = session.ReadValue(nodeId);
                 textBox9.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
                 label13.Text = $"Status: Leitura Realizada";
@@ -241,7 +261,7 @@ namespace AppEvaporadorCliente
 
             try
             {
-                var nodeId = new NodeId("ns=2;i=319"); // FV-002
+                var nodeId = new NodeId("ns=2;i=317"); // FV-002
                 var dataValue = session.ReadValue(nodeId);
                 textBox11.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
                 label17.Text = $"Status: Leitura Realizada";
@@ -255,7 +275,7 @@ namespace AppEvaporadorCliente
 
             try
             {
-                var nodeId = new NodeId("ns=2;i=272"); // TV-001
+                var nodeId = new NodeId("ns=2;i=270"); // TV-001
                 var dataValue = session.ReadValue(nodeId);
                 textBox13.Text = dataValue.Value != null ? dataValue.Value.ToString() : "null";
                 label21.Text = $"Status: Leitura Realizada";
@@ -272,7 +292,7 @@ namespace AppEvaporadorCliente
         {
             try
             {
-                var nodeId = new NodeId("ns=2;i=303"); // SC-001
+                var nodeId = new NodeId("ns=2;i=301"); // SC-001
                 var value = double.Parse(textBox3.Text);
                 var dataValue = new DataValue(new Variant(value));
                 session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
@@ -299,7 +319,7 @@ namespace AppEvaporadorCliente
         {
             try
             {
-                var nodeId = new NodeId("ns=2;i=346"); // SC-002
+                var nodeId = new NodeId("ns=2;i=344"); // SC-002
                 var value = double.Parse(textBox5.Text);
                 var dataValue = new DataValue(new Variant(value));
                 session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
@@ -326,7 +346,7 @@ namespace AppEvaporadorCliente
         {
             try
             {
-                var nodeId = new NodeId("ns=2;i=311"); // SC-003
+                var nodeId = new NodeId("ns=2;i=309"); // SC-003
                 var value = double.Parse(textBox7.Text);
                 var dataValue = new DataValue(new Variant(value));
                 session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
@@ -353,7 +373,7 @@ namespace AppEvaporadorCliente
         {
             try
             {
-                var nodeId = new NodeId("ns=2;i=333"); // FV-001
+                var nodeId = new NodeId("ns=2;i=331"); // FV-001
                 var value = double.Parse(textBox9.Text);
                 var dataValue = new DataValue(new Variant(value));
                 session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
@@ -380,7 +400,7 @@ namespace AppEvaporadorCliente
         {
             try
             {
-                var nodeId = new NodeId("ns=2;i=319"); // FV-002
+                var nodeId = new NodeId("ns=2;i=317"); // FV-002
                 var value = double.Parse(textBox11.Text);
                 var dataValue = new DataValue(new Variant(value));
                 session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
@@ -407,7 +427,7 @@ namespace AppEvaporadorCliente
         {
             try
             {
-                var nodeId = new NodeId("ns=2;i=272"); // TV-001
+                var nodeId = new NodeId("ns=2;i=270"); // TV-001
                 var value = double.Parse(textBox13.Text);
                 var dataValue = new DataValue(new Variant(value));
                 session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);

@@ -1,11 +1,11 @@
 ###########################
 # UaModeler Project File  #
-# Generated at 25.06.2024 #
+# Generated at 27.06.2024 #
 ###########################
 
 PROJECTNAME = ModeloEvaporador
 
-TEMPLATESET = ($TEMPLATES)/net/v4_0/t0/net_server.tt2set
+TEMPLATESET = ($TEMPLATES)/net/v3_3/t0/net_server.tt2set
 
 MODELS += ($MODELS)/Opc.Ua.NodeSet2.ua \
     modeloevaporador.ua
@@ -16,11 +16,10 @@ COLORS = ($MODELS)/Opc.Ua.NodeSet2.ua: #0000ff\
     modeloevaporador.ua: #008000
 
 PROJECTVARIABLES += GenerateDefaultApplication = true \
-    NetFramework = net8 \
+    GeneratePackagesConfig = false \
+    NetFramework = 4.5 \
     ProjectNamespace = ModeloEvaporador \
-    ProjectOrganization = UFCG \
-    PubSubMqttJson = false \
-    RolesAndUsers = false
+    ProjectOrganization = UFCG
 
 OUTPUTPATH = output
 

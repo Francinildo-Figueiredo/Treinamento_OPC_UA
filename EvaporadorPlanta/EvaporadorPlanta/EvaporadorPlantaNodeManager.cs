@@ -37,7 +37,7 @@ namespace EvaporadorPlanta
         {
             NodeStateCollection predefinedNodes = new NodeStateCollection();
             predefinedNodes.LoadFromBinaryResource(context,
-                "C:/Users/Francinildo Barbosa/OneDrive/Documentos/Treinamento_OPC_UA/EvaporadorPlanta/EvaporadorPlanta/Models/EvaporadorPlanta.PredefinedNodes.uanodes",
+                "EvaporadorPlanta.PredefinedNodes.uanodes",
                 typeof(EvaporadorPlantaNodeManager).GetTypeInfo().Assembly,
                 true);
 
