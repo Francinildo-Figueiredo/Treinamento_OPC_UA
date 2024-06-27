@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\Francinildo Barbosa\\OneDrive\\Documentos\\Treinamento_OPC_UA\\AppEvaporadorCliente\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1DA3F288-3D41-416E-942A-5E1E0FB2EECA}|AppEvaporadorCliente\\AppEvaporadorCliente.csproj|C:\\Users\\Francinildo Barbosa\\OneDrive\\Documentos\\Treinamento_OPC_UA\\AppEvaporadorCliente\\appevaporadorcliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1DA3F288-3D41-416E-942A-5E1E0FB2EECA}|AppEvaporadorCliente\\AppEvaporadorCliente.csproj|c:\\users\\francinildo barbosa\\onedrive\\documentos\\treinamento_opc_ua\\appevaporadorcliente\\appevaporadorcliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1DA3F288-3D41-416E-942A-5E1E0FB2EECA}|AppEvaporadorCliente\\AppEvaporadorCliente.csproj|solutionrelative:appevaporadorcliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1DA3F288-3D41-416E-942A-5E1E0FB2EECA}|AppEvaporadorCliente\\AppEvaporadorCliente.csproj|c:\\users\\francinildo barbosa\\onedrive\\documentos\\treinamento_opc_ua\\appevaporadorcliente\\appevaporadorcliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1DA3F288-3D41-416E-942A-5E1E0FB2EECA}|AppEvaporadorCliente\\AppEvaporadorCliente.csproj|C:\\Users\\Francinildo Barbosa\\OneDrive\\Documentos\\Treinamento_OPC_UA\\AppEvaporadorCliente\\appevaporadorcliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1DA3F288-3D41-416E-942A-5E1E0FB2EECA}|AppEvaporadorCliente\\AppEvaporadorCliente.csproj|solutionrelative:appevaporadorcliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -38,8 +38,7 @@
               "RelativeToolTip": "AppEvaporadorCliente\\Form1.Designer.cs",
               "ViewState": "AQIAAFsCAAAAAAAAAAAAAGkCAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T23:32:41.115Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-24T23:32:41.115Z"
             },
             {
               "$type": "Document",
@@ -49,7 +48,7 @@
               "RelativeDocumentMoniker": "AppEvaporadorCliente\\Form1.cs",
               "ToolTip": "C:\\Users\\Francinildo Barbosa\\OneDrive\\Documentos\\Treinamento_OPC_UA\\AppEvaporadorCliente\\AppEvaporadorCliente\\Form1.cs",
               "RelativeToolTip": "AppEvaporadorCliente\\Form1.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAowEwAAAAaAAAA",
+              "ViewState": "AQIAAJQBAAAAAAAAAAAswLsBAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-24T22:55:22.126Z",
               "EditorCaption": ""
@@ -75,8 +74,7 @@
               "ToolTip": "C:\\Users\\Francinildo Barbosa\\OneDrive\\Documentos\\Treinamento_OPC_UA\\AppEvaporadorCliente\\AppEvaporadorCliente\\Form1.cs [Design]",
               "RelativeToolTip": "AppEvaporadorCliente\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-24T22:37:51.192Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-24T22:37:51.192Z"
             }
           ]
         }

@@ -295,7 +295,9 @@ namespace AppEvaporadorCliente
                 var nodeId = new NodeId("ns=2;i=301"); // SC-001
                 var value = double.Parse(textBox3.Text);
                 var dataValue = new DataValue(new Variant(value));
-                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
+                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } },
+                    out StatusCodeCollection results,
+                    out DiagnosticInfoCollection diagnosticInfos);
 
                 if (StatusCode.IsGood(results[0]))
                 {
@@ -322,7 +324,9 @@ namespace AppEvaporadorCliente
                 var nodeId = new NodeId("ns=2;i=344"); // SC-002
                 var value = double.Parse(textBox5.Text);
                 var dataValue = new DataValue(new Variant(value));
-                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
+                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } },
+                    out StatusCodeCollection results,
+                    out DiagnosticInfoCollection diagnosticInfos);
 
                 if (StatusCode.IsGood(results[0]))
                 {
@@ -349,7 +353,9 @@ namespace AppEvaporadorCliente
                 var nodeId = new NodeId("ns=2;i=309"); // SC-003
                 var value = double.Parse(textBox7.Text);
                 var dataValue = new DataValue(new Variant(value));
-                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
+                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } },
+                    out StatusCodeCollection results,
+                    out DiagnosticInfoCollection diagnosticInfos);
 
                 if (StatusCode.IsGood(results[0]))
                 {
@@ -376,7 +382,9 @@ namespace AppEvaporadorCliente
                 var nodeId = new NodeId("ns=2;i=331"); // FV-001
                 var value = double.Parse(textBox9.Text);
                 var dataValue = new DataValue(new Variant(value));
-                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
+                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } },
+                    out StatusCodeCollection results,
+                    out DiagnosticInfoCollection diagnosticInfos);
 
                 if (StatusCode.IsGood(results[0]))
                 {
@@ -403,7 +411,9 @@ namespace AppEvaporadorCliente
                 var nodeId = new NodeId("ns=2;i=317"); // FV-002
                 var value = double.Parse(textBox11.Text);
                 var dataValue = new DataValue(new Variant(value));
-                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
+                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } },
+                    out StatusCodeCollection results,
+                    out DiagnosticInfoCollection diagnosticInfos);
 
                 if (StatusCode.IsGood(results[0]))
                 {
@@ -430,7 +440,9 @@ namespace AppEvaporadorCliente
                 var nodeId = new NodeId("ns=2;i=270"); // TV-001
                 var value = double.Parse(textBox13.Text);
                 var dataValue = new DataValue(new Variant(value));
-                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } }, out StatusCodeCollection results, out DiagnosticInfoCollection diagnosticInfos);
+                session.Write(null, new WriteValueCollection { new WriteValue { NodeId = nodeId, AttributeId = Attributes.Value, Value = dataValue } },
+                    out StatusCodeCollection results,
+                    out DiagnosticInfoCollection diagnosticInfos);
 
                 if (StatusCode.IsGood(results[0]))
                 {
